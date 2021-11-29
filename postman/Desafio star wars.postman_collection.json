@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "e721254f-a1bf-45f5-b312-7a2c0ef1e369",
+		"name": "Desafio star wars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastrar rebelde",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"R2D2\",\n    \"age\": 100,\n    \"gender\": \"OUTROS\",\n    \"locate\": {\n        \"name\": \"Tatooine\",\n        \"latitude\": \"1324\",\n        \"longitude\": \"12356\"\n    },\n    \"inventory\": {\n        \"items\": [\n            {\n                \"name\": \"Arma\",\n                \"point\": 4\n            },\n             {\n                \"name\": \"Munição\",\n                \"point\": 3\n            },\n            {\n                \"name\": \"Comida\",\n                \"point\": 1\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/starwars/rebels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"rebels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar localização dos rebeldes",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Naboo\",\n    \"latitude\": \"4567\",\n    \"longitude\": \"56128\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/starwars/rebels/{{rebelId}}/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"rebels",
+						"{{rebelId}}",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reportar traidor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/starwars/rebels/{{rebelId}}/traitor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"rebels",
+						"{{rebelId}}",
+						"traitor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negociar itens",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rebelRequester\": {\n        \"id\": 1,\n        \"items\": [\n            {\n                \"name\": \"Arma\",\n                \"point\": 4\n            },\n            {\n                \"name\": \"Água\",\n                \"point\": 2\n            }\n        ]\n    },\n    \"rebelReceiver\": {\n        \"id\": 2,\n        \"items\": [\n            {\n                \"name\": \"Munição\",\n                \"point\": \"3\"\n            },\n            {\n                \"name\": \"Munição\",\n                \"point\": \"3\"\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/starwars/trade/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"trade",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar rebelde por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/starwars/rebels/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"rebels",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar pontos perdidos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/starwars/reports/points/losts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"reports",
+						"points",
+						"losts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar porcentagem de traidores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/starwars/reports/traitors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"reports",
+						"traitors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar porcentagem de Rebeldes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/starwars/reports/rebels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"reports",
+						"rebels"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
