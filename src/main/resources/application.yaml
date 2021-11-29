@@ -1,0 +1,23 @@
+server.servlet.context-path: /starwars
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/star_wars
+    username: jedi
+    password: sabre-luz
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+      username: jedi
+      password: sabre-luz
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      javax:
+        persistence:
+          create-database-schemas: true
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
